@@ -6,6 +6,6 @@ export const Panel = () => {
     console.log("desde pagina de bienvenida: ", user.nombre)
 
     return (
-        <h1>PANEL</h1>
+        <h1>EXAMEN PANORAMA</h1>
     );
 };

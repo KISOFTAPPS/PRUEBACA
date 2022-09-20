@@ -78,7 +78,6 @@ export const authSlice = createSlice({
                 idu: 1,
                 idc: 2,
                 descripcion: "Ticket levantado",
-                telefono: 1111111111,
                 fecha: "19/09/2022",
             },
         ],
@@ -101,7 +100,15 @@ export const authSlice = createSlice({
             state.isAuthenticated = true;
             state.clients = [...state.clients,payload];
         },
+        onRegisterU:(state, { payload }) => {
+            state.isAuthenticated = true;
+            state.users = [...state.users,payload];
+        },
+        onRegisterT:(state, { payload }) => {
+            state.isAuthenticated = true;
+            state.tickets = [...state.tickets,payload];
+        },
     },
 });
 
-export const { onChecking, onLogin, onLogout,onRegisterC } = authSlice.actions;
+export const { onChecking, onLogin, onLogout,onRegisterC, onRegisterU, onRegisterT } = authSlice.actions;

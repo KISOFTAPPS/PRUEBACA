@@ -4,14 +4,13 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 
 const SignUpSchema = Yup.object().shape({
-    usuario: Yup.string().required("Required"),
-    nombre: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
-    telefono: Yup.number().required("Required"),
+    idu: Yup.string(),
+    idc: Yup.string(),
+    descripcion: Yup.string().required("Required"),
 });
 
 export const Tickets = () => {
-    const { clients, startRegisterC } = useAuthStore();
+    const { tickets, users, clients, startRegisterT } = useAuthStore();
 
     return (
         <div className="d-flex flex-column w-full justify-content-center container mt-5 gap-5">
@@ -19,43 +18,37 @@ export const Tickets = () => {
                 <h3 className="text-center">Alta de ticket</h3>
                 <Formik
                     initialValues={{
-                        usuaro: "",
-                        nombre: "",
-                        apellidos: "",
-                        direccion: "",
-                        cp: "",
-                        email: "",
-                        telefono: "",
+                        idu: "1",
+                        idc: "1",
+                        descripcion: "",
                     }}
                     validationSchema={SignUpSchema}
                     onSubmit={(value, { resetForm }) => {
                         // same shape as initial values
-                        startRegisterC(value);
+                        startRegisterT(value);
                         resetForm();
                     }}
                 >
                     <Form className="row justify-content-center ">
                         <div className="form-group m-1 col-10 ">
-                            <Field
-                                name="empresa"
-                                type="text"
-                                className="form-control"
-                                placeholder="ID usuario asignado"
-                                required
-                            />
+                            <span>ID usuario asignado: </span>
+                            <Field as="select" name="idu">
+                                {users.map(({ id }) => (
+                                    <option value={id}>{id}</option>
+                                ))}
+                            </Field>
+                        </div>
+                        <div className="form-group m-1 col-10 ">
+                            <span>ID cliente asignado: </span>
+                            <Field as="select" name="idc">
+                                {clients.map(({ id }) => (
+                                    <option value={id}>{id}</option>
+                                ))}
+                            </Field>
                         </div>
                         <div className="form-group m-1 col-10 ">
                             <Field
-                                name="representante"
-                                type="text"
-                                className="form-control"
-                                placeholder="ID cliente asignado"
-                                required
-                            />
-                        </div>
-                        <div className="form-group m-1 col-10 ">
-                            <Field
-                                name="email"
+                                name="descripcion"
                                 type="text"
                                 className="form-control"
                                 placeholder="Descripción"
@@ -79,29 +72,21 @@ export const Tickets = () => {
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Empresa</th>
-                            <th scope="col">Representante</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefono</th>
+                            <th scope="col">ID usuario asignado</th>
+                            <th scope="col">ID cliente asignado</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Fecha de reporte</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {clients.map(
-                            ({
-                                id,
-                                empresa,
-                                representante,
-                                email,
-                                telefono,
-                            }) => (
-                                <tr key={id}>
-                                    <th scope="row">{empresa}</th>
-                                    <td>{representante}</td>
-                                    <td>{email}</td>
-                                    <td>{telefono}</td>
-                                </tr>
-                            )
-                        )}
+                        {tickets.map(({ id, idu, idc, descripcion, fecha }) => (
+                            <tr key={id}>
+                                <th scope="row">{idu}</th>
+                                <td>{idc}</td>
+                                <td>{descripcion}</td>
+                                <td>{fecha}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

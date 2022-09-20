@@ -1,11 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
-import { onChecking, onLogin, onLogout, onRegisterC } from "../redux";
+import {
+    onChecking,
+    onLogin,
+    onLogout,
+    onRegisterC,
+    onRegisterU,
+    onRegisterT,
+} from "../redux";
 import { v4 as uuidv4 } from "uuid";
 
 export const useAuthStore = () => {
-    const id = uuidv4()
+    const id = uuidv4();
+    var f = new Date();
     // Se llama con un selector a los estados de la store
-    const { isAuthenticated, user, users, clients } = useSelector(
+    const { isAuthenticated, user, users, clients, tickets } = useSelector(
         (state) => state.auth
     );
     // Se llama con un dispatch a los acciones de la store
@@ -66,6 +74,73 @@ export const useAuthStore = () => {
         }
     };
 
+    const startRegisterU = async ({
+        usuario,
+        nombre,
+        apellidos,
+        direccion,
+        cp,
+        email,
+        telefono,
+    }) => {
+        // Se hace una funcion async con los datos del usuario
+        //dispatch(onChecking()); // Se llama a la accion para volver todos los estados por defecto
+        try {
+            // Se llama a la api para hacer el registro y se le pasa los datos del usuario por post
+            let user = await users.find(
+                (user) => user.email === email || user.usuario === usuario
+            );
+
+            if (user) {
+                return console.log("El usuario ya existe");
+            } else {
+                dispatch(
+                    onRegisterU({
+                        id: id,
+                        usuario: usuario,
+                        nombre: nombre,
+                        apellidos: apellidos,
+                        direccion: direccion,
+                        cp: cp,
+                        email: email,
+                        telefono: telefono,
+                    })
+                );
+            }
+        } catch (error) {
+            dispatch(
+                onLogout(error.response.data?.msg || "Error al registrarse")
+            );
+            // En caso de dar error se borran los datos de localStorage
+        }
+    };
+
+    const startRegisterT = async ({ idu ="1", idc="1", descripcion }) => {
+        // Se hace una funcion async con los datos del usuario
+        //dispatch(onChecking()); // Se llama a la accion para volver todos los estados por defecto
+        try {
+            dispatch(
+                onRegisterT({
+                    id: id,
+                    idu: idu,
+                    idc: idc,
+                    descripcion: descripcion,
+                    fecha:
+                        f.getDate() +
+                        "/" +
+                        f.getMonth() +
+                        "/" +
+                        f.getFullYear(),
+                })
+            );
+        } catch (error) {
+            dispatch(
+                onLogout(error.response.data?.msg || "Error al registrarse")
+            );
+            // En caso de dar error se borran los datos de localStorage
+        }
+    };
+
     // Funcion que se encarga de checar el token de autenticacion y mantener la sesion
     const checkToken = async () => {
         const token = localStorage.getItem("token"); // Se obtiene el token de localStorage
@@ -91,10 +166,13 @@ export const useAuthStore = () => {
         user,
         users,
         clients,
+        tickets,
 
         //* Metodos o funciones
         startLogin,
         startRegisterC,
+        startRegisterU,
+        startRegisterT,
         startLogout,
         checkToken,
     };
