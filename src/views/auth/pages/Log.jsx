@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useAuthStore } from "../../../hooks";
+import { useEffect } from "react";
 
 
 const SignInSchema = Yup.object().shape({
@@ -28,7 +29,11 @@ const SignInSchema = Yup.object().shape({
 // });
 
 export const Log = () => {
-    const { startLogin } = useAuthStore();
+    const { startLogin,getApiInfo } = useAuthStore();
+    
+    useEffect(() => {
+    }, [])
+    
     return (
         <section className="bg-light">
             <div className="min-vh-100 d-flex flex-column justify-content-center align-items-center">
@@ -58,6 +63,7 @@ export const Log = () => {
                                             value.correo,
                                             value.contraseña,
                                         );
+                                        getApiInfo()
                                     }}
                                 >
                                     <Form className="row justify-content-center ">

@@ -9,7 +9,7 @@ export const authSlice = createSlice({
         user: {},
         users: [
             {
-                id: 1,
+                id: 9,
                 email: "karim@karim.com",
                 password: "123",
                 usuario: "KISOFT",
@@ -20,7 +20,7 @@ export const authSlice = createSlice({
                 telefono: 1111111111,
             },
             {
-                id: 2,
+                id: 10,
                 email: "karim2@karim.com",
                 password: "123",
                 usuario: "KISOFT2",
@@ -31,7 +31,7 @@ export const authSlice = createSlice({
                 telefono: 1111111111,
             },
             {
-                id: 3,
+                id: 11,
                 email: "karim3@karim.com",
                 password: "123",
                 usuario: "KISOFT3",
@@ -96,19 +96,36 @@ export const authSlice = createSlice({
             state.isAuthenticated = false;
             state.user = {};
         },
-        onRegisterC:(state, { payload }) => {
+        onRegisterC: (state, { payload }) => {
             state.isAuthenticated = true;
-            state.clients = [...state.clients,payload];
+            state.clients = [...state.clients, payload];
         },
-        onRegisterU:(state, { payload }) => {
+        onRegisterU: (state, { payload }) => {
             state.isAuthenticated = true;
-            state.users = [...state.users,payload];
+            if (payload != null) {
+                state.users = [...state.users, payload];
+            } else {
+                console.log("Elemento vacio");
+            }
         },
-        onRegisterT:(state, { payload }) => {
+        onRegisterT: (state, { payload }) => {
             state.isAuthenticated = true;
-            state.tickets = [...state.tickets,payload];
+            state.tickets = [...state.tickets, payload];
+        },
+        onGetApi: (state, { payload }) => {
+            payload.usuarios.map(usuario =>state.users = [...state.users, usuario])
+            payload.clientes.map(cliente => state.clients = [...state.clients, cliente])
+            payload.tickets.map(ticket =>state.tickets = [...state.tickets, ticket])
         },
     },
 });
 
-export const { onChecking, onLogin, onLogout,onRegisterC, onRegisterU, onRegisterT } = authSlice.actions;
+export const {
+    onChecking,
+    onLogin,
+    onLogout,
+    onRegisterC,
+    onRegisterU,
+    onRegisterT,
+    onGetApi,
+} = authSlice.actions;

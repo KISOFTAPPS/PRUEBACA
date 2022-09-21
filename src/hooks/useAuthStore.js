@@ -6,8 +6,11 @@ import {
     onRegisterC,
     onRegisterU,
     onRegisterT,
+    onGetApi
 } from "../redux";
 import { v4 as uuidv4 } from "uuid";
+import { testApi } from "../apis/testApi";
+import axios from "axios";
 
 export const useAuthStore = () => {
     const id = uuidv4();
@@ -32,6 +35,14 @@ export const useAuthStore = () => {
         } catch (error) {
             dispatch(onLogout("Credenciales incorrectas"));
         }
+    };
+
+    const getApiInfo = async () => {
+        try {
+            const resp = await testApi.get();
+            const data = resp.data;
+            dispatch(onGetApi(data));
+        } catch (error) {}
     };
 
     // Funcion encargada de comunicarse con la api y hacer el logout
@@ -115,7 +126,7 @@ export const useAuthStore = () => {
         }
     };
 
-    const startRegisterT = async ({ idu ="1", idc="1", descripcion }) => {
+    const startRegisterT = async ({ idu = "1", idc = "1", descripcion }) => {
         // Se hace una funcion async con los datos del usuario
         //dispatch(onChecking()); // Se llama a la accion para volver todos los estados por defecto
         try {
@@ -169,6 +180,7 @@ export const useAuthStore = () => {
         tickets,
 
         //* Metodos o funciones
+        getApiInfo,
         startLogin,
         startRegisterC,
         startRegisterU,

@@ -1,0 +1,256 @@
+{"usuarios":[
+  {
+  "id": 1,
+  "usuario": "yweber0",
+  "nombres": "Yolanda",
+  "apellidos": "Weber",
+  "direccion": "0 Sycamore Alley",
+  "cp": null,
+  "email": "yweber0@google.co.uk",
+  "telefono": "(124) 8527106"
+},
+{
+  "id": 2,
+  "usuario": "mrosenzwig1",
+  "nombres": "Margarete",
+  "apellidos": "Rosenzwig",
+  "direccion": "88944 Di Loreto Crossing",
+  "cp": "8305",
+  "email": "mrosenzwig1@weather.com",
+  "telefono": "(778) 3701614"
+}, 
+{
+  "id": 3,
+  "usuario": "abriiginshaw2",
+  "nombres": "Abdul",
+  "apellidos": "Briiginshaw",
+  "direccion": "208 Melrose Avenue",
+  "cp": "34114",
+  "email": "abriiginshaw2@hibu.com",
+  "telefono": "(239) 7020431"
+}, 
+{
+  "id": 4,
+  "usuario": "jrummery3",
+  "nombres": "Jephthah",
+  "apellidos": "Rummery",
+  "direccion": "9581 Bonner Alley",
+  "cp": null,
+  "email": "jrummery3@unc.edu",
+  "telefono": "(365) 5987741"
+}, 
+{
+  "id": 5,
+  "usuario": "jbrekonridge4",
+  "nombres": "Joellyn",
+  "apellidos": "Brekonridge",
+  "direccion": "791 Dennis Center",
+  "cp": "86000",
+  "email": "jbrekonridge4@dot.gov",
+  "telefono": "(315) 6854988"
+}
+],
+
+"clientes" : [
+  {
+    "id": 1,
+    "empresa": "Skibox",
+    "representante": "Marji Pieters",
+    "email": "mpieters0@reference.com",
+    "telefono": "454-493-4940"
+  }, {
+    "id": 2,
+    "empresa": "Twitterwire",
+    "representante": "Stoddard Whatford",
+    "email": "swhatford1@woothemes.com",
+    "telefono": "590-998-4105"
+  }, {
+    "id": 3,
+    "empresa": "Browsebug",
+    "representante": "Leanora Olczyk",
+    "email": "lolczyk2@google.com.br",
+    "telefono": "405-275-4754"
+  }
+],
+
+"tickets" :[{
+  "id": 1,
+  "id_usuario": 1,
+  "id_cliente": 1,
+  "descripcion": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+  "fecha_reporte": "2022-02-23 06:21:06"
+}, {
+  "id": 2,
+  "id_usuario": 2,
+  "id_cliente": 1,
+  "descripcion": "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+  "fecha_reporte": "2022-05-30 21:00:19"
+}, {
+  "id": 3,
+  "id_usuario": 2,
+  "id_cliente": 3,
+  "descripcion": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+  "fecha_reporte": "2022-08-08 02:42:03"
+}, {
+  "id": 4,
+  "id_usuario": 5,
+  "id_cliente": 3,
+  "descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+  "fecha_reporte": "2022-05-13 12:59:41"
+}, {
+  "id": 5,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+  "fecha_reporte": "2022-08-29 03:25:36"
+}, {
+  "id": 6,
+  "id_usuario": 4,
+  "id_cliente": 3,
+  "descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+  "fecha_reporte": "2022-09-19 08:41:35"
+}, {
+  "id": 7,
+  "id_usuario": 3,
+  "id_cliente": 1,
+  "descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
+  "fecha_reporte": "2021-12-02 07:40:43"
+}, {
+  "id": 8,
+  "id_usuario": 5,
+  "id_cliente": 1,
+  "descripcion": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+  "fecha_reporte": "2022-07-29 05:44:16"
+}, {
+  "id": 9,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+  "fecha_reporte": "2022-07-08 04:32:28"
+}, {
+  "id": 10,
+  "id_usuario": 1,
+  "id_cliente": 3,
+  "descripcion": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+  "fecha_reporte": "2022-02-17 01:05:35"
+}, {
+  "id": 11,
+  "id_usuario": 1,
+  "id_cliente": 3,
+  "descripcion": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+  "fecha_reporte": "2021-11-27 21:05:52"
+}, {
+  "id": 12,
+  "id_usuario": 3,
+  "id_cliente": 2,
+  "descripcion": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+  "fecha_reporte": "2022-02-16 16:05:15"
+}, {
+  "id": 13,
+  "id_usuario": 3,
+  "id_cliente": 1,
+  "descripcion": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+  "fecha_reporte": "2021-12-06 07:03:06"
+}, {
+  "id": 14,
+  "id_usuario": 5,
+  "id_cliente": 2,
+  "descripcion": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+  "fecha_reporte": "2022-09-19 05:17:04"
+}, {
+  "id": 15,
+  "id_usuario": 5,
+  "id_cliente": 3,
+  "descripcion": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+  "fecha_reporte": "2022-03-18 22:12:19"
+}, {
+  "id": 16,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+  "fecha_reporte": "2022-07-28 02:17:32"
+}, {
+  "id": 17,
+  "id_usuario": 2,
+  "id_cliente": 1,
+  "descripcion": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "fecha_reporte": "2022-02-05 04:35:28"
+}, {
+  "id": 18,
+  "id_usuario": 1,
+  "id_cliente": 3,
+  "descripcion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+  "fecha_reporte": "2022-04-07 23:19:33"
+}, {
+  "id": 19,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+  "fecha_reporte": "2022-01-01 12:36:01"
+}, {
+  "id": 20,
+  "id_usuario": 3,
+  "id_cliente": 1,
+  "descripcion": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+  "fecha_reporte": "2022-03-11 08:30:02"
+}, {
+  "id": 21,
+  "id_usuario": 5,
+  "id_cliente": 2,
+  "descripcion": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+  "fecha_reporte": "2022-01-27 03:54:55"
+}, {
+  "id": 22,
+  "id_usuario": 2,
+  "id_cliente": 2,
+  "descripcion": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+  "fecha_reporte": "2022-01-20 13:30:24"
+}, {
+  "id": 23,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+  "fecha_reporte": "2022-01-23 05:12:39"
+}, {
+  "id": 24,
+  "id_usuario": 2,
+  "id_cliente": 3,
+  "descripcion": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+  "fecha_reporte": "2022-08-23 23:08:25"
+}, {
+  "id": 25,
+  "id_usuario": 1,
+  "id_cliente": 3,
+  "descripcion": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+  "fecha_reporte": "2022-02-02 22:38:59"
+}, {
+  "id": 26,
+  "id_usuario": 1,
+  "id_cliente": 1,
+  "descripcion": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+  "fecha_reporte": "2022-07-11 23:10:04"
+}, {
+  "id": 27,
+  "id_usuario": 4,
+  "id_cliente": 1,
+  "descripcion": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+  "fecha_reporte": "2021-12-14 22:17:06"
+}, {
+  "id": 28,
+  "id_usuario": 1,
+  "id_cliente": 1,
+  "descripcion": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "fecha_reporte": "2021-10-05 15:38:25"
+}, {
+  "id": 29,
+  "id_usuario": 2,
+  "id_cliente": 3,
+  "descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+  "fecha_reporte": "2022-04-13 19:19:41"
+}, {
+  "id": 30,
+  "id_usuario": 4,
+  "id_cliente": 3,
+  "descripcion": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+  "fecha_reporte": "2022-08-21 17:24:13"
+}]}
