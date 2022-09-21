@@ -79,12 +79,12 @@ export const Tickets = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {tickets.map(({ id, idu, idc, descripcion, fecha }) => (
+                        {tickets.map(({ id, id_usuario, id_cliente, descripcion, fecha_reporte }) => (
                             <tr key={id}>
-                                <th scope="row">{idu}</th>
-                                <td>{idc}</td>
+                                <th scope="row">{id_usuario}</th>
+                                <td>{id_cliente}</td>
                                 <td>{descripcion}</td>
-                                <td>{fecha}</td>
+                                <td>{fecha_reporte}</td>
                             </tr>
                         ))}
                     </tbody>

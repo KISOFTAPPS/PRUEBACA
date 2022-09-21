@@ -5,7 +5,7 @@ import * as Yup from "yup";
 
 const SignUpSchema = Yup.object().shape({
     usuario: Yup.string().required("Required"),
-    nombre: Yup.string().required("Required"),
+    nombres: Yup.string().required("Required"),
     apellidos: Yup.string().required("Required"),
     direccion: Yup.string().required("Required"),
     cp: Yup.number().required("Required"),
@@ -23,7 +23,7 @@ export const Usuarios = () => {
                 <Formik
                     initialValues={{
                         usuario: "",
-                        nombre: "",
+                        nombres: "",
                         apellidos: "",
                         direccion: "",
                         cp: "",
@@ -49,7 +49,7 @@ export const Usuarios = () => {
                         </div>
                         <div className="form-group m-1 col-10 ">
                             <Field
-                                name="nombre"
+                                name="nombres"
                                 type="text"
                                 className="form-control"
                                 placeholder="Nombre(s)"
@@ -131,7 +131,7 @@ export const Usuarios = () => {
                             ({
                                 id,
                                 usuario,
-                                nombre,
+                                nombres,
                                 apellidos,
                                 direccion,
                                 cp,
@@ -140,7 +140,7 @@ export const Usuarios = () => {
                             }) => (
                                 <tr key={id}>
                                     <th scope="col">{usuario}</th>
-                                    <th scope="col">{nombre}</th>
+                                    <th scope="col">{nombres}</th>
                                     <th scope="col">{apellidos}</th>
                                     <th scope="col">{direccion}</th>
                                     <th scope="col">{cp}</th>

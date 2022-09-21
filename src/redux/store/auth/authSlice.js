@@ -13,7 +13,7 @@ export const authSlice = createSlice({
                 email: "karim@karim.com",
                 password: "123",
                 usuario: "KISOFT",
-                nombre: "Karim",
+                nombres: "Karim",
                 apellidos: "Sabag Ochoa",
                 direccion: "mesa del seri 111",
                 cp: 11111,
@@ -24,7 +24,7 @@ export const authSlice = createSlice({
                 email: "karim2@karim.com",
                 password: "123",
                 usuario: "KISOFT2",
-                nombre: "Karim",
+                nombres: "Karim",
                 apellidos: "Sabag Ochoa",
                 direccion: "mesa del seri 111",
                 cp: 11111,
@@ -35,7 +35,7 @@ export const authSlice = createSlice({
                 email: "karim3@karim.com",
                 password: "123",
                 usuario: "KISOFT3",
-                nombre: "Karim",
+                nombres: "Karim",
                 apellidos: "Sabag Ochoa",
                 direccion: "mesa del seri 111",
                 cp: 11111,
@@ -44,28 +44,28 @@ export const authSlice = createSlice({
         ],
         clients: [
             {
-                id: 1,
+                id: 78,
                 empresa: "karimE",
                 representante: "KarimR",
                 email: "karimC@karim.com",
                 telefono: 1111111111,
             },
             {
-                id: 2,
+                id: 56,
                 empresa: "karimE2",
                 representante: "KarimR2",
                 email: "karimC2@karim.com",
                 telefono: 1111111111,
             },
             {
-                id: 3,
+                id: 89,
                 empresa: "karimE3",
                 representante: "KarimR3",
                 email: "karimC3@karim.com",
                 telefono: 1111111111,
             },
             {
-                id: 4,
+                id: 55,
                 empresa: "karimE4",
                 representante: "KarimR4",
                 email: "karimC4@karim.com",
@@ -74,11 +74,11 @@ export const authSlice = createSlice({
         ],
         tickets: [
             {
-                id: 1,
-                idu: 1,
-                idc: 2,
+                id: 50,
+                id_usuario: 1,
+                id_cliente: 2,
                 descripcion: "Ticket levantado",
-                fecha: "19/09/2022",
+                fecha_reporte: "19/09/2022",
             },
         ],
     },
@@ -113,9 +113,32 @@ export const authSlice = createSlice({
             state.tickets = [...state.tickets, payload];
         },
         onGetApi: (state, { payload }) => {
-            payload.usuarios.map(usuario =>state.users = [...state.users, usuario])
-            payload.clientes.map(cliente => state.clients = [...state.clients, cliente])
-            payload.tickets.map(ticket =>state.tickets = [...state.tickets, ticket])
+            payload.usuarios.map(
+                (usuario) => (state.users = [...state.users, usuario])
+            );
+            payload.clientes.map(
+                (cliente) => (state.clients = [...state.clients, cliente])
+            );
+            payload.tickets.map(
+                (ticket) => (state.tickets = [...state.tickets, ticket])
+            );
+        },
+        onDeleteC: (state, { payload }) => {
+            state.clients = state.clients.filter(
+                (client) => client.id !== payload
+            );
+        },
+        onEditC: (state, { payload }) => {
+            console.log("hey desde onEdit", payload);
+            state.clients = state.clients.map((client) => {
+                if (client.id !== payload.id) {
+                    return client;
+                }
+                return {
+                    ...client,
+                    ...payload,
+                };
+            });
         },
     },
 });
@@ -128,4 +151,6 @@ export const {
     onRegisterU,
     onRegisterT,
     onGetApi,
+    onDeleteC,
+    onEditC,
 } = authSlice.actions;

@@ -6,7 +6,9 @@ import {
     onRegisterC,
     onRegisterU,
     onRegisterT,
-    onGetApi
+    onGetApi,
+    onDeleteC,
+    onEditC,
 } from "../redux";
 import { v4 as uuidv4 } from "uuid";
 import { testApi } from "../apis/testApi";
@@ -87,7 +89,7 @@ export const useAuthStore = () => {
 
     const startRegisterU = async ({
         usuario,
-        nombre,
+        nombres,
         apellidos,
         direccion,
         cp,
@@ -109,7 +111,7 @@ export const useAuthStore = () => {
                     onRegisterU({
                         id: id,
                         usuario: usuario,
-                        nombre: nombre,
+                        nombres: nombres,
                         apellidos: apellidos,
                         direccion: direccion,
                         cp: cp,
@@ -152,6 +154,24 @@ export const useAuthStore = () => {
         }
     };
 
+    const deleteC = async (id) => {
+        dispatch(onDeleteC(id))
+    }
+    const editC = async ({
+        id,
+        empresa,
+        representante,
+        email,
+        telefono,
+    }) => {
+        dispatch(onEditC({
+            id: id,
+            empresa: empresa,
+            representante: representante,
+            email: email,
+            telefono: telefono,
+        }))
+    }
     // Funcion que se encarga de checar el token de autenticacion y mantener la sesion
     const checkToken = async () => {
         const token = localStorage.getItem("token"); // Se obtiene el token de localStorage
@@ -168,7 +188,7 @@ export const useAuthStore = () => {
     };
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const getUsers = (page = 0) => {};
+    
 
     // Se comparten las variables o metodos por medio de este hook
     return {
@@ -187,5 +207,7 @@ export const useAuthStore = () => {
         startRegisterT,
         startLogout,
         checkToken,
+        deleteC,
+        editC
     };
 };
