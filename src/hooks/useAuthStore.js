@@ -12,7 +12,6 @@ import {
 } from "../redux";
 import { v4 as uuidv4 } from "uuid";
 import { testApi } from "../apis/testApi";
-import axios from "axios";
 
 export const useAuthStore = () => {
     const id = uuidv4();
@@ -42,7 +41,8 @@ export const useAuthStore = () => {
     const getApiInfo = async () => {
         try {
             const resp = await testApi.get();
-            const data = resp.data;
+            console.log("desde get api",resp)
+            const data = resp.data.record;
             dispatch(onGetApi(data));
         } catch (error) {}
     };
